@@ -117,7 +117,7 @@ fun SystemStatusScreen(
                 modifier = Modifier
                     .clip(RoundedCornerShape(6.dp))
                     .background(SystemSurfaceVariant)
-                    .border(1.dp, SystemBorderActive.copy(alpha = 0.5f), RoundedCornerShape(6.dp))
+                    .border(1.dp, SystemCyan.copy(alpha = 0.5f), RoundedCornerShape(6.dp))
                     .clickable { onOpenSettings() }
                     .padding(horizontal = 8.dp, vertical = 5.dp)
                     .testTag("top_left_settings_button")
