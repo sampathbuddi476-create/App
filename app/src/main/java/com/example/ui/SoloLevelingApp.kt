@@ -398,8 +398,8 @@ fun SoloLevelingApp(viewModel: SoloLevelingViewModel = viewModel()) {
                     )
                 }
 
-                SoloScreen.SETTINGS -> {
-                    SettingsScreen(
+               SoloScreen.SETTINGS -> {
+                   SettingsScreen(
                         profile = profile,
                         currentUser = currentUser,
                         isSoundEnabled = workoutState.isSoundEnabled,
@@ -423,6 +423,13 @@ fun SoloLevelingApp(viewModel: SoloLevelingViewModel = viewModel()) {
                             }
                         },
                         onSignInWithGoogle = { activity -> viewModel.signInWithGoogle(activity) },
-                        onSignOut = { viewModel.signOut() }
+                        onSignOut = { viewModel.signOut() },
+                        onManualSync = {}
                     )
-  
+                }
+
+                else -> {}
+            }
+        }
+    }
+}
