@@ -423,24 +423,6 @@ fun SoloLevelingApp(viewModel: SoloLevelingViewModel = viewModel()) {
                             }
                         },
                         onSignInWithGoogle = { activity -> viewModel.signInWithGoogle(activity) },
-                        onSignOut = { viewModel.signOut() },
-                        onManualSync = { viewModel.manualSyncLeaderboard() },
-                        onOpenTutorial = { viewModel.openTutorial() },
-                        onUpdateUsername = { newName -> viewModel.updateHunterUsername(newName) },
-                        onCheckUsernameAvailability = { name -> viewModel.checkUsernameAvailability(name) },
-                        onGetSuggestedUsernames = { viewModel.getSuggestedUsernames() }
+                        onSignOut = { viewModel.signOut() }
                     )
-                }
-
-                SoloScreen.INVENTORY -> {
-                    InventoryScreen(
-                        items = inventory,
-                        profile = profile,
-                        onUsePotion = { item -> viewModel.usePotion(item) },
-                        onToggleEquip = { item -> viewModel.toggleEquip(item) }
-                    )
-                }
-            }
-        }
-    }
-}
+  
