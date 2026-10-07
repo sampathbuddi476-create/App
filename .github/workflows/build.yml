@@ -26,6 +26,14 @@ jobs:
       - name: Make Wrapper Executable
         run: chmod +x gradlew
 
+      - name: Prepare google-services.json
+        run: |
+          if [ -f "firebase-blueprint.json" ]; then
+            cp firebase-blueprint.json app/google-services.json
+          elif [ ! -f "app/google-services.json" ]; then
+            echo '{"project_info":{"project_number":"123456789","project_id":"dummy-app","storage_bucket":"dummy-app.appspot.com"},"client":[{"client_info":{"mobilesdk_app_id":"1:123456789:android:abcdef","android_client_info":{"package_name":"com.example"}},"oauth_client":[],"api_key":[{"current_key":"dummy_api_key"}],"services":{"analytics_service":{"status":1}}}]}' > app/google-services.json
+          fi
+
       - name: Build Debug APK
         run: ./gradlew assembleDebug --stacktrace
 
