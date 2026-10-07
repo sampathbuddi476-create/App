@@ -32,16 +32,16 @@ jobs:
           cat << 'EOF' > app/google-services.json
           {
             "project_info": {
-              "project_number": "123456789012",
-              "project_id": "dummy-project",
-              "storage_bucket": "dummy-project.appspot.com"
+              "project_number": "917995523425",
+              "project_id": "gen-lang-client-0636394966",
+              "storage_bucket": "gen-lang-client-0636394966.appspot.com"
             },
             "client": [
               {
                 "client_info": {
-                  "mobilesdk_app_id": "1:123456789012:android:abcdef1234567890",
+                  "mobilesdk_app_id": "1:917995523425:android:abcdef1234567890",
                   "android_client_info": {
-                    "package_name": "com.example"
+                    "package_name": "com.aistudio.sololeveling.kpxwz"
                   }
                 },
                 "oauth_client": [],
@@ -69,4 +69,3 @@ jobs:
         with:
           name: app-debug
           path: app/build/outputs/apk/debug/*.apk
-          
