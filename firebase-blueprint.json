@@ -1,0 +1,50 @@
+{
+  "entities": {
+    "LeaderboardEntry": {
+      "title": "LeaderboardEntry",
+      "description": "Hunter ranking and progression on the global leaderboard.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "hunterName": { "type": "string" },
+        "hunterRank": { "type": "string" },
+        "level": { "type": "integer" },
+        "totalReps": { "type": "integer" },
+        "dungeonsCleared": { "type": "integer" },
+        "photoUrl": { "type": "string" },
+        "updatedAt": { "type": "integer" }
+      },
+      "required": ["userId", "hunterName", "hunterRank", "level", "totalReps", "dungeonsCleared"]
+    },
+    "PvpBattle": {
+      "title": "PvpBattle",
+      "description": "1v1 Player vs Player exercise duel where both hunters compete in the exact same exercise.",
+      "type": "object",
+      "properties": {
+        "battleId": { "type": "string" },
+        "hostUserId": { "type": "string" },
+        "hostName": { "type": "string" },
+        "guestUserId": { "type": "string" },
+        "guestName": { "type": "string" },
+        "exerciseType": { "type": "string" },
+        "targetReps": { "type": "integer" },
+        "hostReps": { "type": "integer" },
+        "guestReps": { "type": "integer" },
+        "status": { "type": "string" },
+        "winnerId": { "type": "string" },
+        "createdAt": { "type": "integer" }
+      },
+      "required": ["battleId", "hostUserId", "exerciseType", "targetReps", "status"]
+    }
+  },
+  "firestore": {
+    "/leaderboard/{userId}": {
+      "schema": { "$ref": "#/entities/LeaderboardEntry" },
+      "description": "Global Hunter rankings"
+    },
+    "/pvp_battles/{battleId}": {
+      "schema": { "$ref": "#/entities/PvpBattle" },
+      "description": "Active and completed 1v1 PvP duel rooms"
+    }
+  }
+}
